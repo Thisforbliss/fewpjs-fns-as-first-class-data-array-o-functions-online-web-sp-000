@@ -1,14 +1,35 @@
+function performTask(task, name, type){
+    let str = `${task} ${name} the ${type}`
+    console.log(str)
+    return str
+}
 
-wakeDog = console.log("Wake ${dogName} the ${dogBreed}");,
-leashDog = console.log("Leash ${dogName} the ${dogBreed}");,
-walkToPark = console.log("Walk to the park with ${dogName} the ${dogBreed}");,
-throwFrisbee = console.log("Throw the frisbee for ${dogName} the ${dogBreed}");,
-walkHome = console.log("Walk home with ${dogName} the ${dogBreed}");,
-unleashDog = console.log("Unleash ${dogName} the ${dogBreed}");
+function wakeDog(name, type){
+    return performTask("Wake", name, type)
+}
 
-// routine = [wakeDog, leashDog, walkToPark, throwFrisbee, walkHome, unleashDog]
+function leashDog(name, type){
+    return performTask("Leash", name, type)
+}
 
-// const exerciseDog = function(dogName, dogBreed) {
-//   console.log(routine);
-// }
+function walkToPark(name, type){
+    return performTask("Walk to the park with", name, type)
+}
 
+function throwFrisbee(name, type){
+    return performTask("Throw the frisbee for", name, type)
+}
+
+function walkHome(name, type){
+    return performTask("Walk home with", name, type)
+}
+
+function unleashDog(name, type){
+    return performTask("Unleash", name, type)
+}
+
+let routine = [wakeDog, leashDog, walkToPark, throwFrisbee, walkHome, unleashDog]
+
+function exerciseDog(name, breed){
+    return routine.map( r => r(name, breed))
+}
